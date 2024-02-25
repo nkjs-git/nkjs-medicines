@@ -1,0 +1,35 @@
+{
+  "development": {
+    "username": "<your-mssql-username>",
+    "password": "<your-mssql-password>",
+    "database": "<your-mssql-database-name>",
+    "host": "<your-mssql-server-name>",
+    "port": 1433,
+    "dialect": "mssql",
+    "dialectOptions": {
+      "options": {
+        "encrypt": true
+      }
+    },
+    "logging": false,
+    "pool": {
+      "max": 50,
+      "min": 0,
+      "idle": 10000,
+      "acquire": 60000,
+      "evict": 1000
+    },
+    "retry": {
+      "match": [
+        "/SequelizeConnectionError/",
+        "/SequelizeConnectionRefusedError/",
+        "/SequelizeHostNotFoundError/",
+        "/SequelizeHostNotReachableError/",
+        "/SequelizeInvalidConnectionError/",
+        "/SequelizeConnectionTimedOutError/",
+        "/TimeoutError/"
+      ],
+      "max": 10
+    }
+  }
+}
