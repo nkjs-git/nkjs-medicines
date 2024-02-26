@@ -10,6 +10,8 @@ module.exports = (req, res, next) => {
       delete responseObj['code']
     }
     res.send(responseObj)
+  } else {
+    res.send(req.responseObj)
   }
   next()
 }

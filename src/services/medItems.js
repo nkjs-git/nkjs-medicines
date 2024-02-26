@@ -21,8 +21,8 @@ const findItemById = async (id) => {
 
 const createItem = async (req, res) => {
     console.log('Body: ', JSON.stringify(req.body))
-    const { body: { itemName, itemCode, batchNo, expiryDate, manufacturingDate, quantity } } = req
-    const newItem = await db.Items.create({ itemName, itemCode, batchNo, expiryDate, manufacturingDate, quantity });
+    // const { body: { itemName, itemCode, batchNo, expiryDate, manufacturingDate, quantity } } = req
+    const newItem = await db.Items.create({ ...req.body, isDeleted: false });
     return newItem;
 };
 
@@ -59,7 +59,7 @@ const deleteItem = async (req, res) => {
             return { code: 404, success: false, error: "Item Does not exist" };
         }
 
-        return await db.Items.destroy({ where: { id: Id } });
+        return await db.Items.destroy({ where: { id: req.params.id } });
 
     } catch (error) {
         return { code: 500, success: false, error: "Something went wrong" };

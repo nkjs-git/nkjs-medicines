@@ -1,11 +1,6 @@
-const { getAllMedicineItems, MedItemsController } = require('../controllers')
+const { MedItemsController } = require('../controllers')
 
 const { asyncwrap } = require('../middleware')
-
-const hello = function ({ router }) {
-  router.get('/', asyncwrap(getAllMedicineItems.getAllItems))
-  return router
-}
 
 const items = function ({ router }) {
   router.get('/', asyncwrap(MedItemsController.getItems))
@@ -17,6 +12,5 @@ const items = function ({ router }) {
 }
 
 module.exports = {
-  hello,
   items
 }
