@@ -1,8 +1,8 @@
 const {
-  SQL_SERVER = "<your-mssql-server-name>",
-  SQL_DATABASE = "<your-mssql-database-name>",
-  SQL_ADMINUSERNAME = "<your-mssql-username>",
-  SQL_ADMINPASSWORD = "<your-mssql-password>",
+  SQL_SERVER = "nkjs-mdedicals.database.windows.net",
+  SQL_DATABASE = "nnkjs-medicals-orders",
+  SQL_ADMINUSERNAME = "nkjs-user",
+  SQL_ADMINPASSWORD = "{ga15ecNav",
 } = process.env
 
 const config = {

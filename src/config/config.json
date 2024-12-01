@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "<your-mssql-username>",
-    "password": "<your-mssql-password>",
-    "database": "<your-mssql-database-name>",
-    "host": "<your-mssql-server-name>",
+    "username": "nkjs-user",
+    "password": "{ga15ecNav",
+    "database": "nnkjs-medicals-orders",
+    "host": "nkjs-mdedicals.database.windows.net",
     "port": 1433,
     "dialect": "mssql",
     "dialectOptions": {
